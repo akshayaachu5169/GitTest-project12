@@ -1,4 +1,4 @@
-package test1;
+package test2;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,16 +12,20 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class SampleTest1 {
+
+public class SampleTest2 {
 	@Test
 	public void logintest() throws IOException, InterruptedException {
 		WebDriverManager.chromedriver().setup();
 		WebDriver wd = new ChromeDriver();
 		wd.manage().window().maximize();
-		wd.get("https://www.google.com");
+		wd.get("https://www.bing.com");
 		File src = ((TakesScreenshot) wd).getScreenshotAs(OutputType.FILE);
-		FileHandler.copy(src, new File("C:\\SeleniumPractiseWorkSpace\\G1_GitTest\\screenshot\\google.png"));
+		FileHandler.copy(src, new File("C:\\SeleniumPractiseWorkSpace\\G1_GitTest\\screenshot\\bing.png"));
 		Thread.sleep(3000);
 		wd.quit();
+	
 	}
+	
+
 }
